@@ -1,0 +1,24 @@
+# Base profile
+akretion-usability:
+  - base_partner_ref
+  - base_usability
+  - partner_tree_default
+server-brand:
+  - disable_odoo_online
+server-tools:
+  - auditlog
+  - scheduler_error_mailer
+web:
+  - web_advanced_search
+  - web_dialog_size
+  - web_export_view
+  - web_responsive
+  - web_searchbar_full_width
+---
+# Enable demo ribbon only for devel and test environments
+ONLY:
+  PGDATABASE: # This environment variable must exist and be in the list
+    - devel
+    - test
+web:
+  - web_environment_ribbon
