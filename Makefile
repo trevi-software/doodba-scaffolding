@@ -40,3 +40,6 @@ update-devel:
 
 clean:
 	rm init build setup-devel initdb-devel
+
+start-proxy:
+	docker-compose -p reverseproxy -f reverseproxy.yaml up
