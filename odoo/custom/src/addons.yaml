@@ -1,4 +1,6 @@
 # Base profile
+odoo-profiles:
+  - profile_base
 akretion-usability:
   - base_partner_ref
   - base_usability

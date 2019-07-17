@@ -17,11 +17,20 @@
         # - oca refs/pull/<PR>/head
         #
 
+odoo-profiles:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/trevi-software/odoo-profiles.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
 akretion-usability:
   defaults:
     depth: $DEPTH_MERGE
   remotes:
-    origin: https://github.com/akretion/odoo-usability
+    origin: https://github.com/akretion/odoo-usability.git
   target: origin $ODOO_VERSION
   merges:
     - origin $ODOO_VERSION
