@@ -29,5 +29,14 @@ down-devel:
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
 	docker-compose -f devel.yaml down
 
+restart-devel:
+	export UID=$(UID) GID=$(GID) UMASK=$(UMASK)
+	docker-compose -f devel.yaml restart odoo odoo_proxy
+
+update-devel:
+	export UID=$(UID) GID=$(GID) UMASK=$(UMASK)
+	docker-compose -f devel.yaml run --rm odoo addons update -w $(ADDONS)
+	docker-compose -f devel.yaml restart odoo odoo_proxy`
+
 clean:
 	rm init build setup-devel initdb-devel
