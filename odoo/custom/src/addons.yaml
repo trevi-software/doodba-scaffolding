@@ -4,16 +4,23 @@ odoo-profiles:
 akretion-usability:
   - base_partner_ref
   - base_usability
+  - eradicate_quick_create
   - partner_tree_default
 server-brand:
   - disable_odoo_online
 server-tools:
   - auditlog
   - scheduler_error_mailer
+server-ux:
+  - barcode_action
+  - base_technical_features
+  - date_range
+  - mass_editing
 web:
   - web_advanced_search
   - web_dialog_size
   - web_export_view
+  - web_m2x_options
   - web_responsive
   - web_searchbar_full_width
 ---
