@@ -14,6 +14,8 @@ server-tools:
 server-ux:
   - barcode_action
   - base_technical_features
+  - base_tier_validation
+  - base_tier_validation_formula
   - date_range
   - mass_editing
 web:
