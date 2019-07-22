@@ -1,15 +1,28 @@
 # Base profile
 odoo-profiles:
   - profile_base
+  - profile_sale_crm
 akretion-usability:
   - base_partner_ref
   - base_usability
   - eradicate_quick_create
   - partner_tree_default
+  - product_usability
+  - sale_product_tree_default
+  - sale_purchase_no_product_template_menu
+  - sale_quotation_title
+  - sale_usability
+crm:
+  - crm_claim
+  - crm_claim_code
+  - crm_claim_type
+  - crm_phonecall
+  - crm_phonecall_summary_predefined
 server-brand:
   - disable_odoo_online
 server-tools:
   - auditlog
+  - base_view_inheritance_extension
   - scheduler_error_mailer
 server-ux:
   - barcode_action
