@@ -24,4 +24,4 @@ docker-compose.yml
 init
 build
 setup-devel
-initdb-devel
+initdb
