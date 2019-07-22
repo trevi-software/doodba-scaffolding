@@ -8,7 +8,7 @@ init:
 
 build: init
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
-	docker-compose -f devel.yaml build --pull; \
+	docker-compose -f $(YML) build --pull; \
 	touch build
 
 setup-devel: build
@@ -16,30 +16,30 @@ setup-devel: build
 	docker-compose -f setup-devel.yaml run --rm odoo; \
 	touch setup-devel
 
-initdb-devel: setup-devel
+initdb: setup-devel
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
-	docker-compose -f devel.yaml run --rm odoo odoo -i base --stop-after-init; \
-	touch initdb-devel
+	docker-compose -f $(YML) run --rm odoo odoo -i base --stop-after-init; \
+	touch initdb
 
-run-devel: setup-devel initdb-devel
+run: setup-devel initdb
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
-	docker-compose -f devel.yaml up
+	docker-compose -f $(YML) up
 
-down-devel:
+stop:
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
-	docker-compose -f devel.yaml down
+	docker-compose -f $(YML) down
 
-restart-devel:
+restart:
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK)
-	docker-compose -f devel.yaml restart odoo odoo_proxy
+	docker-compose -f $(YML) restart odoo odoo_proxy
 
-update-devel:
+update:
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK)
-	docker-compose -f devel.yaml run --rm odoo addons update -w $(ADDONS)
-	docker-compose -f devel.yaml restart odoo odoo_proxy`
+	docker-compose -f $(YML) run --rm odoo addons update -w $(ADDONS)
+	docker-compose -f $(YML) restart odoo odoo_proxy`
 
 clean:
-	rm init build setup-devel initdb-devel
+	rm init build setup-devel initdb
 
 start-proxy:
 	docker-compose -p reverseproxy -f reverseproxy.yaml up
