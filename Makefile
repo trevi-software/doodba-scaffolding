@@ -38,11 +38,19 @@ update:
 	docker-compose -f $(YML) run --rm odoo addons update -w $(ADDONS)
 	docker-compose -f $(YML) restart odoo odoo_proxy`
 
+test:
+	export UID=$(UID) GID=$(GID) UMASK=$(UMASK)
+	docker-compose -f $(YML) run --rm odoo odoo --stop-after-init --init $(ADDONS)
+	docker-compose -f $(YML) run --rm odoo unittest $(ADDONS) --log-level=error
+
 clean:
 	rm init build setup-devel initdb
 
 start-proxy:
 	docker-compose -p reverseproxy -f reverseproxy.yaml up
+
+stop-proxy:
+	docker-compose -p reverseproxy -f reverseproxy.yaml down -v
 
 docker:
 	sudo apt update
