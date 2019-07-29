@@ -8,9 +8,9 @@ services:
         networks: &public
             default:
             public:
-            inverseproxy_shared:
+            reverseproxy_shared:
         labels:
-            traefik.docker.network: "inverseproxy_shared"
+            traefik.docker.network: "reverseproxy_shared"
             traefik.enable: "true"
             traefik.frontend.passHostHeader: "true"
             traefik.longpolling.port: "8072"
@@ -160,7 +160,7 @@ networks:
             encrypted: 1
     public:
 
-    inverseproxy_shared:
+    reverseproxy_shared:
         external: true
 
 volumes:
