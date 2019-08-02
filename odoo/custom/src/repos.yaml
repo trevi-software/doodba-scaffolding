@@ -15,6 +15,7 @@
     merges:
         - ocb $ODOO_VERSION
         - trevi refs/pull/1/head
+        - trevi refs/pull/2/head
         # Example of a merge of the PR with the number <PR>
         # - oca refs/pull/<PR>/head
         #
