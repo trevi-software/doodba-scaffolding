@@ -19,6 +19,17 @@
         # - oca refs/pull/<PR>/head
         #
 
+partner-contact:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/partner-contact.git
+    trevi: https://github.com/trevi-software/partner-contact.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
 server-backend:
   defaults:
     depth: $DEPTH_MERGE
