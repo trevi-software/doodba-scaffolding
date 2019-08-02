@@ -18,6 +18,8 @@ crm:
   - crm_claim_type
   - crm_phonecall
   - crm_phonecall_summary_predefined
+server-backend:
+  - base_user_role
 server-brand:
   - disable_odoo_online
 server-tools:

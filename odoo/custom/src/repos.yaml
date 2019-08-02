@@ -19,6 +19,17 @@
         # - oca refs/pull/<PR>/head
         #
 
+server-backend:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/server-backend.git
+    trevi: https://github.com/trevi-software/server-backend.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
 server-brand:
   defaults:
     depth: $DEPTH_MERGE
