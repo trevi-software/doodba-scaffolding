@@ -2,6 +2,8 @@
 odoo-profiles:
   - profile_base
   - profile_sale_crm
+  - profile_stock_management
+  - profile_stock_management_purchase
 akretion-usability:
   - base_partner_ref
   - base_usability
@@ -20,6 +22,9 @@ crm:
   - crm_phonecall_summary_predefined
 partner-contact:
   - partner_vat_unique
+product-attribute:
+  - packaging_uom
+  - product_code_unique
 server-backend:
   - base_user_role
 server-brand:
@@ -35,6 +40,26 @@ server-ux:
   - base_tier_validation_formula
   - date_range
   - mass_editing
+stock-logistics-reporting:
+  - stock_report_quantity_by_location
+stock-logistics-warehouse:
+  - stock_demand_estimate
+  - stock_inventory_chatter
+  - stock_inventory_discrepancy
+  - stock_inventory_lockdown
+  - stock_inventory_verification_request
+  - stock_mts_mto_rule
+  - stock_orderpoint_move_link
+  - stock_orderpoint_purchase_link
+  - stock_packaging
+  - stock_request
+  - stock_request_purchase
+  - stock_request_tier_validation
+  - stock_warehouse_orderpoint_stock_info
+  - stock_warehouse_orderpoint_stock_info_unreserved
+stock-logistics-workflow:
+  - stock_no_negative
+  - stock_picking_show_backorder
 web:
   - web_advanced_search
   - web_dialog_size
@@ -42,6 +67,7 @@ web:
   - web_m2x_options
   - web_responsive
   - web_searchbar_full_width
+  - web_widget_x2many_2d_matrix
 ---
 # Enable demo ribbon only for devel and test environments
 ONLY:
