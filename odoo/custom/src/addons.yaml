@@ -20,6 +20,8 @@ crm:
   - crm_claim_type
   - crm_phonecall
   - crm_phonecall_summary_predefined
+l10n-ethiopia:
+  - l10n_et_toponym
 partner-contact:
   - partner_vat_unique
 product-attribute:
