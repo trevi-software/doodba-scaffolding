@@ -117,3 +117,12 @@ akretion-usability:
   merges:
     - origin $ODOO_VERSION
     - trevi refs/pull/2/head
+
+itprojects-misc-addons:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    itprojects: https://github.com/it-projects-llc/misc-addons.git
+  target: origin $ODOO_VERSION
+  merges:
+    - itprojects $ODOO_VERSION

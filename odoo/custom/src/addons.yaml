@@ -14,6 +14,25 @@ akretion-usability:
   - sale_purchase_no_product_template_menu
   - sale_quotation_title
   - sale_usability
+itprojects-misc-addons:
+  - auth_signup_confirmation
+  - auth_signup_confirmation_crm
+  - attachment_large_object
+  - base_import_map
+  - base_session_store_psql
+  - crm_next_action
+  - ir_attachment_force_storage
+  - project_timelog
+  - reminder_base
+  - reminder_crm_next_action
+  - reminder_crm_next_action_time
+  - reminder_task_deadline
+  - res_partner_phone
+  - theme_kit
+  - web_debranding
+  - web_sessions_management
+
+# OCA https://github.com/OCA/
 crm:
   - crm_claim
   - crm_claim_code
