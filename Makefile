@@ -25,6 +25,15 @@ run: setup-devel initdb
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
 	docker-compose -f $(YML) up
 
+initprod:
+	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
+	docker-compose -f prod.yaml run --rm odoo odoo -i base,trevi_et --stop-after-init
+	touch initprod
+
+prod: initprod
+	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
+	docker-compose -f prod.yaml up
+
 stop:
 	export UID=$(UID) GID=$(GID) UMASK=$(UMASK); \
 	docker-compose -f $(YML) down
@@ -44,7 +53,7 @@ test:
 	docker-compose -f $(YML) run --rm odoo unittest $(ADDONS) --log-level=error
 
 clean:
-	rm init build setup-devel initdb
+	rm init build setup-devel initdb initprod
 
 start-proxy:
 	docker-compose -p reverseproxy -f reverseproxy.yaml up

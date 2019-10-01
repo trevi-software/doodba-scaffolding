@@ -18,7 +18,7 @@ services:
         volumes:
             - filestore:/var/lib/odoo:z
         labels:
-            traefik.docker.network: "inverseproxy_shared"
+            traefik.docker.network: "reverseproxy_shared"
             traefik.enable: "true"
             traefik.frontend.passHostHeader: "true"
             traefik.longpolling.port: "8072"
@@ -51,11 +51,11 @@ services:
             MAIL_NON_CANONICAL_DEFAULT: "$SMTP_REAL_NON_CANONICAL_DEFAULT"
 
     backup:
-        image: tecnativa/duplicity:postgres-s3
+        image: trevi/duplicity:postgres-b2
         hostname: backup
         domainname: "$DOMAIN_PROD"
         environment:
-            DST: "s3://s3.amazonaws.com/$BACKUP_S3_BUCKET"
+            DST: "b2://$BACKUP_B2_ID@$BACKUP_B2_BUCKET"
             EMAIL_FROM: "$BACKUP_EMAIL_FROM"
             EMAIL_TO: "$BACKUP_EMAIL_TO"
             PGDATABASE: *dbname
